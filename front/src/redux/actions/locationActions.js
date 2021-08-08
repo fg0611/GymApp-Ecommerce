@@ -1,18 +1,18 @@
 import axios from "axios";
+import { url } from "../../App";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 export const getLocations = () => {
   return async (dispatch) => {
     try {
-      const result = await fetch(`http://localhost:3001/location/`);
-      const locations = await result.json();
+      const { data } = await axios.get(`${url}/location`);
       dispatch({
         type: "GET_LOCATIONS",
-        payload: locations,
+        payload: data,
       });
-      if (typeof locations.message === "string") {
-        toast.warn(locations.message);
+      if (typeof data.message === "string") {
+        toast.warn(data.message);
       }
     } catch (error) {
       dispatch({
@@ -28,8 +28,8 @@ export const getLocation = (id) => {
   return async (dispatch) => {
     let location;
     try {
-      const result = await fetch(`http://localhost:3001/location/${id}`);
-      location = await result.json();
+      const { data } = await axios.get(`${url}/location/${id}`);
+      location = await data.json();
       dispatch({
         type: "GET_LOCATION",
         payload: location,
@@ -50,12 +50,8 @@ export const getLocation = (id) => {
 export const addLocation = (data) => {
   return async (dispatch) => {
     try {
-      const result = await fetch(`http://localhost:3001/location/create`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      const resJson = await result.json();
+      const { data } = await axios.post(`${url}/location/create`, data);
+      const resJson = await data.json();
       if (typeof resJson.message === "string") {
         toast.success(resJson.message);
       }
@@ -77,9 +73,7 @@ export const deleteLocation = (id) => {
   return async (dispatch) => {
     //http://localhost:3001/location/delete?id=bc54b265-dc56-4719-b9f6-2267b47b15f9
     try {
-      const { data } = await axios.delete(
-        `http://localhost:3001/location/delete/${id}`
-      );
+      const { data } = await axios.delete(`${url}/location/delete/${id}`);
       const resJson = await data.json();
       if (typeof resJson.message === "string") {
         toast.info(resJson.message);
@@ -114,10 +108,7 @@ export const updateLocation = ({ id, description, lat, lng }) => {
       };
       console.log(id);
 
-      const { data } = await axios.put(
-        `http://localhost:3001/location/update/${id}`,
-        body
-      );
+      const { data } = await axios.put(`${url}/location/update/${id}`, body);
       const resJson = await data.json();
       if (typeof resJson.message === "string") {
         toast.info(resJson.message);

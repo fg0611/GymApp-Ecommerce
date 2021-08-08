@@ -7,31 +7,28 @@ const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 //Evalua si esta en produccion o desarrollo.
 const sequelize =
   process.env.NODE_ENV === "production"
-    ? 
-      new Sequelize( {
-        database = DB_NAME,
-        dialect = 'postgres',
+    ? new Sequelize({
+        database: DB_NAME,
+        dialect: "postgres",
         hots: DB_HOST,
         port: 5432,
         username: DB_USER,
         password: DB_PASSWORD,
         pool: {
-          max: 3, 
+          max: 3,
           min: 1,
           idle: 10000,
         },
         dialectOptions: {
           ssl: {
             require: true,
-            rejectUnauthorized: false
+            rejectUnauthorized: false,
           },
           keepAlive: true,
         },
         ssl: true,
       })
-    : 
-
-      new Sequelize(
+    : new Sequelize(
         `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
         {
           logging: false,
@@ -82,10 +79,8 @@ Category.hasMany(Plan);
 Order.belongsToMany(Product, { through: Order_Product });
 Product.belongsToMany(Order, { through: Order_Product });
 
-Order.hasMany(Order_Product)
-Order_Product.belongsTo(Order)
-
-
+Order.hasMany(Order_Product);
+Order_Product.belongsTo(Order);
 
 // Product.hasMany(Review);
 // Review.belongsTo(Product);

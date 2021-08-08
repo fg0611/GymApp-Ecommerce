@@ -1,13 +1,15 @@
 import React from "react";
 import { GoogleMap, Marker, LoadScript } from "@react-google-maps/api";
 
+const { GMAPS_KEY } = process.env;
+
 const containerStyle = {
   width: "500px",
   height: "500px",
 };
 
 function LocationDraw({ location }) {
-  const apiKey = process.env.GOOGLE_MAPS_API_KEY;
+  const apiKey = GMAPS_KEY;
   const pos = {
     lat: parseFloat(location.lat),
     lng: parseFloat(location.lng),

@@ -1,7 +1,8 @@
+import axios from "axios";
 import { url } from "../../App";
 
 export const GET_PRODUCT_DETAIL = "GET_PRODUCT_DETAIL";
-export const RESET_PRODUCT_DETAIL = "RESET_PRODUCT_DETIAL"
+export const RESET_PRODUCT_DETAIL = "RESET_PRODUCT_DETIAL";
 export const GET_PRODUCTS = "GET_PRODUCTS";
 export const GET_CATEGORIES = "GET_CATEGORIES";
 
@@ -13,17 +14,13 @@ export const FILTER_PRODUCTS = "FILTER_PRODUCTS";
 // const {BASE_URL_API} = require('../../index')
 // require("dotenv").config();
 
-
 export function getProductDetail(id) {
-  return function (dispatch) {
-    fetch(`${url}/product/` + id)
-      .then((res) => res.json())
-      .then((detail) =>
-        dispatch({
-          type: GET_PRODUCT_DETAIL,
-          payload: detail,
-        })
-      );
+  return async function (dispatch) {
+    const { data } = await axios.get(`${url}/product/` + id);
+    dispatch({
+      type: GET_PRODUCT_DETAIL,
+      payload: data,
+    });
   };
 }
 
@@ -31,41 +28,34 @@ export function resetProductDetail() {
   return { type: RESET_PRODUCT_DETAIL };
 }
 
-export function getProducts(query) {
-  return function (dispatch) {
-    fetch(`${url}/product`)
-      .then((res) => res.json())
-      .then((products) =>
-        dispatch({
-          type: GET_PRODUCTS,
-          payload: products,
-        })
-      );
+export function getProducts() {
+  return async function (dispatch) {
+    await axios.get(`${url}/product`).then(({ data }) =>
+      dispatch({
+        type: GET_PRODUCTS,
+        payload: data,
+      })
+    );
   };
 }
 
 export const searchProducts = (input) => {
   return async (dispatch) => {
-    const res = await fetch(url + `/product?string=${input}`);
-    const resJson = await res.json();
+    const { data } = await axios.get(url + `/product?string=${input}`);
     dispatch({
       type: GET_PRODUCTS,
-      payload: resJson,
+      payload: data,
     });
   };
 };
 
 export function getCategories() {
-
-  return function (dispatch) {
-    fetch(url + "/category")
-      .then((res) => res.json())
-      .then((categories) =>
-        dispatch({
-          type: GET_CATEGORIES,
-          payload: categories,
-        })
-      );
+  return async function (dispatch) {
+    const { data } = await axios.get(url + "/category");
+    dispatch({
+      type: GET_CATEGORIES,
+      payload: data,
+    });
   };
 }
 
@@ -74,13 +64,12 @@ export function orderProducts(payload) {
 }
 
 export function filterProducts(category) {
-  return function (dispatch) {
-    fetch(url + '/product')
-      .then(res => res.json())
-      .then(payload => dispatch({
-        type: FILTER_PRODUCTS,
-        payload,
-        category
-      }))
-  }
+  return async function (dispatch) {
+    const { data } = await axios.get(url + "/product");
+    dispatch({
+      type: FILTER_PRODUCTS,
+      payload: data,
+      category,
+    });
+  };
 }
