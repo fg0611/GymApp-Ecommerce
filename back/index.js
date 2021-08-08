@@ -38,7 +38,7 @@ require("dotenv").config();
  * Agregar un process.env.PORT y agregarlo en el .env PORT = 3001 *
  * ************************************************************** */
 conn.sync({ force: true }).then(() => {
-  server.listen(process.env.PORT, () => {
+  server.listen(process.env.PORT || 3001, () => {
     console.log(`listening at PORT ${process.env.PORT}`);
 
     //Estas funciones carga productos y usuarios del archivo seeds, en la DB
