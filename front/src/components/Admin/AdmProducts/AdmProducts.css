@@ -1,0 +1,115 @@
+.admProducts {
+    box-sizing: border-box;
+    width: 75%;
+    min-height: 80vh ;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 15px;
+    margin-right: 2%;
+    padding: 10px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Link {
+    text-decoration: none;
+    color: #002fff;
+    /* background-color: green; */
+    font-size: 40px;
+    height: 40px;
+    transition: 0.5s;
+}
+.Link:hover {
+    font-size: 50px;
+    color: #3559fa;
+}
+
+
+.product-cards {
+    background-color: white;
+    width: 98%;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 15px;
+    padding: 10px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.titulos {
+    background-color: #ededed;
+}
+
+.name {
+    width: 30%;
+}
+
+.stock {
+    width: 15%;
+    text-align: center;
+}
+
+.price {
+    width: 15%;
+    text-align: center;
+}
+
+.edit {
+    width: 10%;
+    text-align: center;
+}
+.edit-l {
+    text-decoration: none;
+    color: blue;
+    font-size: 2em;
+    background-color: transparent;
+}
+.edit-l:hover {
+    font-size: 2.5em;
+}
+
+
+.delete {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+    align-items: center;
+}
+
+.delete-button {
+    background-color: transparent;
+    border: none;
+    color: red;
+    font-size: 2em;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.delete-button:hover {
+    font-size: 2.5em;
+}
+
+.buttons-c {
+    border: none;
+    width: 40%;
+    height: 25px;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.cancel-c:hover {
+    width: 50%;
+}
+
+.delete-c {
+    background-color: red;
+    color: white;
+}
+
+.delete-c:hover {
+        background: rgb(255, 69, 69);
+        width: 50%;
+}

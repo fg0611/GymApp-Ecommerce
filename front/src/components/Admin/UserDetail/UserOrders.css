@@ -1,0 +1,44 @@
+.UserOrders {
+    box-sizing: border-box;
+    margin: 10px;
+    padding: 10px;
+    color: #000;
+    /* border: solid 5px rgb(150, 148, 148); */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.726);
+    box-shadow: 0 4px 25px 2px rgba(0, 0, 0, 0.411), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    width: 45%;
+}
+.UserOrders a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.navlink {
+    width: 70%;
+    text-align: center;
+    border-radius: 20px;
+    border: none;
+    transition: 0.5s;
+    cursor: pointer;
+    background-color: #ffff00;
+    box-shadow: 0 4px 25px 2px rgba(0, 0, 0, 0.411), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    color: black;
+    font-size: 1.1em;
+}
+.navlink:hover {
+    width: 90%;
+    font-size: 1.2em;
+    box-shadow: 0 4px 5px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+}
+
+.orderID {
+    text-align: center;
+    background-color: #212121;
+    color: #fff;
+}
+
+

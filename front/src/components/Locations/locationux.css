@@ -1,0 +1,19 @@
+.container {
+  align-content: center;
+  padding-right: 300px;
+}
+
+.btn {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  width: 120px;
+  text-align: center;
+  font-size: 15px;
+  padding: 20px;
+  float: left;
+  width: auto;
+  min-width: 30px;
+}
+.group {
+  background-color: white;
+}

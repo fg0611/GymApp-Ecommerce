@@ -1,0 +1,16 @@
+.box2 {
+    background-color: #f0f2f2;
+    height: 270px;
+    background-image: url('https://expertosenestetica.es/wp-content/uploads/2017/03/amar-running.jpg');
+    
+    background-position-y: center;
+    background-size: cover;
+    }
+    
+    .title {
+        font-size: 90px;
+        display: flex;
+        justify-content: center;
+        color: rgb(54, 54, 54)
+       
+    }

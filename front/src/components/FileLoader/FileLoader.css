@@ -1,0 +1,41 @@
+.container {
+  padding-top: 20px;
+}
+.fileSelect {
+  display: flex;
+  width: 20rem;
+  align-items: center;
+  flex-direction: row;
+  padding: 0.4rem;
+}
+
+.innerInput {
+  border: 3px dotted #000000;
+  background-color: transparent;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 0.3rem 6rem;
+  border-radius: 1rem;
+  transition: all 0.2s linear;
+}
+
+.innerInput:hover {
+  background: #c4c2c7;
+  border: 3px solid #000000;
+}
+
+.fileName {
+  height: 6rem;
+  width: 6rem;
+  margin-left: 0.5rem;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+  color: #0c0c0a;
+  border: 3px solid #000000;
+  border-radius: 1.3rem;
+}
+
+.hidden {
+  display: none;
+}

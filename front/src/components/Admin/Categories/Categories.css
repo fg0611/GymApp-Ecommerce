@@ -1,0 +1,12 @@
+.creators {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 75%;
+    margin-right: 2%;
+    margin-top: 1%;
+    /* background-color: red; */
+    background-color: #c9c9c9;
+    padding: 10px;
+}

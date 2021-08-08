@@ -1,0 +1,50 @@
+.admUserDetail {
+    padding: 10px 0;
+    width: 75%;
+    min-height: 80vh ;
+    margin-top: 15px;
+    margin-right: 2%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    align-items: center;
+    background-color: #a7a5a5;
+}
+
+.aud-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 97%;
+    min-height: 20vh;   
+    background-color: #fff;
+    padding: 0 30px;
+    box-shadow: 0 4px 25px 2px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(255, 255, 0, 0.185);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.aud-info p, 
+.aud-info h3
+ {
+    width: 50%;
+}
+
+.aud-info h3 {
+    font-size: 1.5em;
+    border-bottom: solid 2px gray;
+    padding: 0;
+}
+
+.aud-info h1 {
+    margin-right: 5%;
+}
+
+.aud-orders {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}

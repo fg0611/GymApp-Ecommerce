@@ -1,0 +1,88 @@
+.orders {
+  box-sizing: border-box;
+  width: 75%;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: white;
+  margin-top: 15px;
+  margin-right: 2%;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.Link {
+  text-decoration: none;
+  color: #002fff;
+  /* background-color: green; */
+  font-size: 40px;
+  height: 40px;
+  transition: 0.5s;
+}
+.Link:hover {
+  font-size: 50px;
+  color: #3559fa;
+}
+
+.cards {
+  background-color: white;
+  width: 98%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 15px;
+  padding: 10px 0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.titulos {
+  background-color: #ededed;
+}
+
+.id {
+  width: 20%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+.openId{
+  cursor: pointer;
+  overflow: inherit;
+  text-overflow: inherit;
+}
+.total {
+  width: 10%;
+}
+
+.orderState {
+  width: 10%;
+}
+
+.createdAt {
+  width: 15%;
+  text-align: center;
+}
+
+.info {
+  width: 5%;
+}
+
+.select {
+  width: 15%;
+  align-items: center;
+}
+
+.state {
+  width: 10%;
+}
+
+.popover {
+  pointer-events: none;
+  max-width: 300;
+  display: "flex";
+  align-content: "center";
+}

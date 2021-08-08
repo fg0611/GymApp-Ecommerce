@@ -1,0 +1,16 @@
+.box3 {
+    background-color: #f0f2f2;
+    height: 270px;
+    background-image: url('https://img.freepik.com/foto-gratis/gimnasio-vacio-equipo-interior-manana-salida-sol_3535-139.jpg?size=626&ext=jpg');
+    
+    background-position-y: center;
+    background-size: cover;
+    }
+    
+    .title {
+        font-size: 90px;
+        display: flex;
+        justify-content: center;
+        color: rgb(136, 135, 135)
+       
+    }

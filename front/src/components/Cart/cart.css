@@ -1,0 +1,128 @@
+.cart {
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: #ededed;
+  min-height: 89.5vh;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+}
+
+.carrito-v {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.carrito-vacio {
+  background-color: green;
+  border-radius: 100%;
+  color: black;
+  width: 50%;
+  transition: 0.3s;
+}
+
+.carrito-vacio:hover {
+  background-color: rgba(0, 128, 0, 0.59);
+  width: 55%;
+}
+
+.items {
+  width: 65%;
+  display: flex;
+  padding: 10px;
+  flex-direction: column;
+}
+
+.totales {
+  width: 25%;
+  max-height: 80vh;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(128, 128, 128, 0.446);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 2px;
+}
+
+.titles-total {
+  margin-bottom: 40px;
+}
+
+.subtotales {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 0;
+  align-items: center;
+}
+
+.subtotales-total {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  border-bottom: grey 2px solid;
+  border-top: grey 2px solid;
+}
+
+.subtotales-icons {
+  font-size: 2em;
+  width: 20%;
+}
+
+
+.titles {
+  width: 100%;
+  padding-bottom: 10px;
+  /* background-color: chartreuse; */
+  border-bottom: grey 2px solid;
+}
+
+.buttons {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons a {
+  text-decoration: none;
+  width: 80%;
+  text-align: center;
+  transition: 0.7s;
+}
+.buttons a:hover {
+  width: 100%;
+}
+
+.comprar {
+  width: 100%;
+  padding: 5px 0;
+  background-color: green;
+  color: white;
+  border: none;
+  margin: 10px 0;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.comprar:hover {
+  width: 100%;
+  background-color: #00800088;
+  border-radius: 10px;
+}
+
+input {
+  height: 1.5rem;
+  width: 4rem;
+  border-radius: 5px;
+  font-size: medium;
+  text-align: center;
+}
