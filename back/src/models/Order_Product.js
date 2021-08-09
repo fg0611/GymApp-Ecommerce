@@ -2,20 +2,18 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "OrderLines",
+    "Order_Product",
     {
       price: {
         type: DataTypes.FLOAT,
-        allowNull: false,
+        allowNull: true,
       },
       quantity: {
         type: DataTypes.INTEGER,
         allowNull: true,
       },
     },
-    {
-      freezeTableName: true,
-    },
-    { timestamps: false }
+    // { freezeTableName: true },
+    { timestamps: false } 
   );
 };

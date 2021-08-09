@@ -4,15 +4,32 @@ const fs = require("fs");
 const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_NAME } = process.env;
 
-const sequelize = new Sequelize(
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
-  {
-    logging: false,
-    native: false,
-  }
-);
+//Evalua si esta en produccion o desarrollo.
+const sequelize =
+  process.env.NODE_ENV === "production"
+    ? //Si esta en produccion, sequelize se enlaza con la base de datos de heroku
+      new Sequelize(process.env.DATABASE_URL, {
+        dialect: "postgres",
+        protocol: "postgres",
+        dialectOptions: {
+          ssl: {
+            rejectUnauthorized: false,
+          },
+        },
+      })
+    : //Si esta en desarrollo, sequelize se enlaza con la base de datos local.
+      // console.log('Prueba DATABASE_URL', process.env.DATABASE_URL);
+      new Sequelize(
+        `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
+        {
+          logging: false,
+          native: false,
+        }
+      );
+
 const basename = path.basename(__filename);
 
+//Checkeamos que la conexion entre sequelize y la bd se haya realizado
 try {
   sequelize.authenticate();
   console.log("Connection has been established successfully.");
@@ -39,27 +56,28 @@ let capsEntries = entries.map((entry) => [
 ]);
 sequelize.models = Object.fromEntries(capsEntries);
 
-const { Product, Category, Order, User, Plan } = sequelize.models;
-Product.belongsToMany(Category, { through: "productCategory" });
-Category.belongsToMany(Product, { through: "productCategory" });
+const { Product, Category, Order, User, Plan, Order_Product } =
+  sequelize.models;
+Product.belongsToMany(Category, { through: "product_category" });
+Category.belongsToMany(Product, { through: "product_category" });
 
-Order.belongsTo(User);
 User.hasMany(Order);
+Order.belongsTo(User);
 
 Plan.belongsTo(Category);
 Category.hasMany(Plan);
 
-Order.belongsToMany(Product, { through: "OrderLines" });
-Product.belongsToMany(Order, { through: "OrderLines" });
+Order.belongsToMany(Product, { through: Order_Product });
+Product.belongsToMany(Order, { through: Order_Product });
 
-//User.hasMany(Order);
-//Order.belongsTo(User);
+Order.hasMany(Order_Product);
+Order_Product.belongsTo(Order);
 
-//Product.hasMany(Review);
-//Review.belongsTo(Product);
+// Product.hasMany(Review);
+// Review.belongsTo(Product);
 
-//User.hasMany(Review);
-//Review.belongsTo(User);
+// User.hasMany(Review);
+// Review.belongsTo(User);
 
 module.exports = {
   ...sequelize.models,
