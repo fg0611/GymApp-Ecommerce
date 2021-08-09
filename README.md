@@ -1,4 +1,4 @@
-# Final-Project---Henry-Team-5
+# Henry-Team-5 Graduation-Project (E-commerce)
 This is our final project required to graduate from the Henry Bootcamp
 
 
