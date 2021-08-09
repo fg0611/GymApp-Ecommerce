@@ -4,25 +4,24 @@ module.exports = (sequelize) => {
   sequelize.define(
     "product",
     {
-      // uuid: {
-      //   type: DataTypes.UUID,
-      //   defaultValue: DataTypes.UUIDV4,
-      //   primaryKey: true,
-      // },
+      uuid: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+      },
       name: {
         type: DataTypes.STRING,
         allowNull: false,
-        unique: true
       },
       description: {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      images: {
+      image: {
         type: DataTypes.ARRAY(DataTypes.STRING),
       },
       price: {
-        type: DataTypes.FLOAT,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
       stock: {

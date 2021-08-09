@@ -1,23 +1,16 @@
-const { DataTypes, NUMBER, STRING, INTEGER } = require("sequelize");
+const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
     "review",
     {
-      comment: {
+      uuid: {
+        type: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        primaryKey: true,
+      },
+      text: {
         type: DataTypes.STRING,
-        allowNull: false,
-      },
-      rating: {
-        type: DataTypes.INTEGER,
-        allowNull: false,
-      },
-      productId: {
-        type: INTEGER,
-        allowNull: false,
-      },
-      userId: {
-        type: STRING,
         allowNull: false,
       },
     },
