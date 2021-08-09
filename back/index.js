@@ -45,7 +45,7 @@ conn.sync({ force: true }).then(() => {
     //Estas funciones carga productos y usuarios del archivo seeds, en la DB
     await createProductsSeeds();
     await createUsersSeeds();
-    await createOrderSeeds();
+    //await createOrderSeeds();
     await locationsSeeder();
   });
 });
